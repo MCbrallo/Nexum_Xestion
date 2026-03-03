@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Nexum Xestion | Control y verificación documental</title>
+  <meta name="description" content="Control y verificación documental, listos para auditoría. Centraliza documentos y conserva trazabilidad completa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@200;300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --c-night: #0A1B3D;
+      --c-main: #123A74;
+      --c-light: #EEF3FB;
+      --c-accent: #B98A2E;
+      --c-ivory: #F6F1E7;
+      --c-ink: #51607A;
+      
+      --f-title: 'Cormorant Garamond', serif;
+      --f-body: 'Inter', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      background-color: #FFFFFF;
+      color: var(--c-night);
+      font-family: var(--f-body);
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Premium Ambient Background - Relaxing & Subtle */
+    .ambient-bg {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      overflow: hidden;
+      z-index: -2;
+      background-color: #FFFFFF;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      animation: floatOrb 15s infinite alternate ease-in-out;
+      will-change: transform;
+    }
+
+    .orb-1 {
+      top: -15%; left: -15%;
+      width: 60vw; height: 60vw;
+      background: var(--c-light); /* #EEF3FB */
+      opacity: 1;
+    }
+
+    .orb-2 {
+      bottom: -20%; right: -15%;
+      width: 55vw; height: 55vw;
+      background: rgba(18, 58, 116, 0.25); /* Much more visible */
+      animation-duration: 18s;
+      animation-delay: -2s;
+    }
+
+    .orb-3 {
+      top: 15%; right: 5%; left: auto; /* Moved to top right to separate */
+      width: 45vw; height: 45vw;
+      background: rgba(185, 138, 46, 0.2); /* Much more visible */
+      animation-duration: 22s;
+      animation-delay: -5s;
+    }
+
+    @keyframes floatOrb {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(10%, 12%) scale(1.2); }
+      100% { transform: translate(-8%, -10%) scale(0.85); }
+    }
+
+    /* Moving Lines Background */
+    .moving-lines {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: -2;
+      background-image: linear-gradient(to right, rgba(18, 58, 116, 0.15) 1px, transparent 1px); /* Highly visible lines */
+      background-size: 100px 100%;
+      animation: panLines 12s linear infinite; /* Faster animation */
+      mask-image: radial-gradient(ellipse at center, black 50%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 50%, transparent 100%);
+      pointer-events: none;
+    }
+    
+    @keyframes panLines {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 0; }
+    }
+
+    /* Entrance Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeScale {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .animate-up {
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0;
+    }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .delay-5 { animation-delay: 0.5s; }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: min(4vh, 2.5rem) clamp(1.5rem, 5vw, 4rem);
+    }
+
+    header {
+      flex: 0 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: var(--f-title);
+      font-weight: 400;
+      font-size: clamp(1.4rem, 3vh, 1.8rem); /* Increased size */
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-night);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem; /* Slightly increased gap */
+    }
+    .logo-icon {
+      width: clamp(32px, 5vh, 44px); /* Increased size */
+      height: clamp(32px, 5vh, 44px); /* Increased size */
+      flex-shrink: 0;
+    }
+
+    main {
+      flex: 1 1 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      gap: clamp(2rem, 5vw, 5rem);
+      min-height: 0;
+    }
+
+    @media (min-width: 992px) {
+      main {
+        grid-template-columns: 1.15fr 0.85fr; /* Slightly more room for text */
+        gap: clamp(3rem, 7vw, 7rem);
+      }
+    }
+
+    .copy-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 0;
+      max-width: 580px; /* Elegant wrapping */
+      margin-right: auto;
+    }
+
+    h1 {
+      font-family: var(--f-title);
+      font-weight: 300;
+      font-size: clamp(2.2rem, 4vw + 1vh, 4.2rem); /* Larger, more impactful */
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--c-night);
+      margin-bottom: clamp(1.2rem, 3.5vh, 2rem);
+    }
+    
+    h1 i {
+      font-style: italic;
+      color: var(--c-main);
+    }
+
+    .subtitle {
+      font-size: clamp(1.05rem, 1.2vw + 0.5vh, 1.2rem);
+      line-height: 1.6;
+      color: var(--c-ink);
+      font-weight: 300;
+      letter-spacing: 0.01em;
+      margin-bottom: clamp(2rem, 5vh, 3rem);
+      max-width: 95%;
+    }
+
+    .benefits {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(1rem, 2.5vh, 1.5rem);
+      margin-bottom: clamp(2rem, 5vh, 3rem);
+    }
+
+    @media (min-width: 768px) {
+      .benefits {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: clamp(1.5rem, 2.5vw, 2.5rem);
+      }
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: clamp(0.9rem, 1vw + 0.5vh, 1rem);
+      color: var(--c-main);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+
+    .benefit svg {
+      width: clamp(16px, 2vh, 20px);
+      height: clamp(16px, 2vh, 20px);
+      stroke: var(--c-accent);
+      stroke-width: 1.2;
+      flex-shrink: 0;
+    }
+
+    .trust-line {
+      font-size: clamp(0.7rem, 0.8vw + 0.5vh, 0.75rem); /* Smaller */
+      color: var(--c-ink);
+      opacity: 0.7;
+      margin-bottom: clamp(1.5rem, 4vh, 2.5rem);
+      font-weight: 200;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      align-self: flex-start;
+      background-color: var(--c-accent);
+      color: #fff;
+      text-decoration: none;
+      padding: clamp(0.8rem, 2vh, 1.1rem) clamp(2rem, 5vw, 3rem);
+      border-radius: 2px; /* Sharper, more elegant edges */
+      font-family: var(--f-body);
+      font-weight: 300;
+      font-size: clamp(0.85rem, 1vw + 0.5vh, 0.95rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 30px -10px rgba(185, 138, 46, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.7s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px -10px rgba(185, 138, 46, 0.6);
+      background-color: #cda043;
+    }
+
+    .cta-button:hover::before {
+      left: 100%;
+    }
+
+    .cta-button:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 1px var(--c-ivory), 0 0 0 3px var(--c-accent);
+    }
+
+    /* Mockup Section - Glassmorphism Premium */
+    .mockup-section {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 0;
+      animation: fadeScale 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0;
+      animation-delay: 0.4s;
+    }
+
+    .mockup-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: min(540px, 60vh); /* Larger wrapper to allow more separation */
+      aspect-ratio: 1;
+      margin: 0 auto;
+    }
+
+    .mockup-card {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-radius: 16px;
+      padding: clamp(1.5rem, 3vw, 2.2rem);
+      box-shadow: 
+        0 24px 48px -12px rgba(10, 27, 61, 0.06), 
+        0 2px 6px rgba(10, 27, 61, 0.02),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+      transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 500ms ease;
+      cursor: default;
+    }
+
+    .mockup-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 
+        0 32px 64px -16px rgba(10, 27, 61, 0.12), 
+        0 4px 12px rgba(10, 27, 61, 0.04),
+        inset 0 0 0 1px rgba(255, 255, 255, 1);
+      z-index: 10 !important;
+    }
+
+    .card-1 {
+      top: 0%; left: 0%; width: 85%; z-index: 3;
+    }
+    .card-2 {
+      top: 38%; right: -5%; width: 75%; z-index: 2;
+    }
+    .card-3 {
+      bottom: 0%; left: 10%; width: 75%; z-index: 1;
+    }
+
+    /* Card internals */
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .skeleton-icon {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: rgba(238, 243, 251, 0.8);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border: 1px solid rgba(18, 58, 116, 0.05);
+    }
+    .skeleton-icon::after {
+      content: '';
+      width: 14px; height: 14px;
+      border: 1px solid var(--c-main);
+      border-radius: 2px;
+      opacity: 0.6;
+    }
+    .skeleton-icon.alt::after {
+      border-radius: 50%;
+    }
+
+    .skeleton-text-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .skeleton-title {
+      height: 6px; width: 65%;
+      background: var(--c-main);
+      border-radius: 4px;
+      opacity: 0.7;
+    }
+    .skeleton-subtitle {
+      height: 4px; width: 45%;
+      background: var(--c-ink);
+      border-radius: 4px;
+      opacity: 0.3;
+    }
+
+    .badge {
+      font-size: 9px;
+      font-family: var(--f-body);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 6px 10px;
+      border-radius: 2px;
+      background: rgba(18, 58, 116, 0.05);
+      color: var(--c-main);
+      flex-shrink: 0;
+      border: 1px solid rgba(18, 58, 116, 0.1);
+    }
+    .badge.alt {
+      background: rgba(185, 138, 46, 0.05);
+      color: var(--c-accent);
+      border-color: rgba(185, 138, 46, 0.15);
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .skeleton-line {
+      height: 4px; width: 100%;
+      background: rgba(81, 96, 122, 0.15);
+      border-radius: 4px;
+    }
+    .skeleton-line.short {
+      width: 60%;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding-left: 10px;
+      border-left: 1px solid rgba(81, 96, 122, 0.15);
+    }
+
+    .timeline-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .dot {
+      position: absolute;
+      left: -13.5px;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--c-main);
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.8);
+    }
+    .timeline-item:last-child .dot {
+      background: var(--c-ink);
+      opacity: 0.4;
+    }
+
+    @media (max-width: 991px) {
+      .mockup-section {
+        display: none;
+      }
+    }
+    
+    @media (max-width: 991px) and (min-height: 650px) {
+      .mockup-section {
+        display: flex;
+        height: auto;
+        flex: 1;
+        align-items: flex-start;
+      }
+      .mockup-wrapper {
+        max-width: 320px;
+        aspect-ratio: auto;
+        height: 120px;
+      }
+      .card-1 {
+        top: 0; left: 0; width: 100%;
+      }
+      .card-2, .card-3 { display: none; }
+    }
+
+    footer {
+      flex: 0 0 auto;
+      font-size: clamp(0.65rem, 1vh, 0.75rem);
+      color: var(--c-ink);
+      opacity: 0.5;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding-top: clamp(0.75rem, 1.5vh, 1.5rem);
+      border-top: 1px solid rgba(81, 96, 122, 0.1);
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="moving-lines"></div>
+  <div class="container">
+    <header class="animate-up">
+      <div class="logo">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="logo-icon">
+          <defs>
+            <mask id="keyhole-mask">
+              <rect width="100" height="100" fill="white" />
+              <circle cx="50" cy="58" r="7" fill="black" />
+              <polygon points="46,62 54,62 57,80 43,80" fill="black" />
+            </mask>
+          </defs>
+          <g mask="url(#keyhole-mask)">
+            <path d="M 50 85 L 21 85 L 24 42 L 32 44 V 30 A 18 18 0 0 1 50 12 V 22 A 8 8 0 0 0 42 30 V 42 H 45 V 36 H 50 Z" fill="#D4B271" />
+            <path d="M 50 85 L 79 85 L 76 42 L 68 44 V 30 A 18 18 0 0 0 50 12 V 22 A 8 8 0 0 1 58 30 V 42 H 55 V 36 H 50 Z" fill="#B98A2E" />
+          </g>
+        </svg>
+        Nexum Xestion
+      </div>
+    </header>
+    
+    <main>
+      <div class="copy-section">
+        <h1 class="animate-up delay-1">Control y verificación<br><i>documental.</i></h1>
+        <p class="subtitle animate-up delay-2">Centraliza documentos, evita versiones duplicadas y conserva trazabilidad completa con un registro claro de eventos y accesos.</p>
+        
+        <div class="benefits animate-up delay-3">
+          <div class="benefit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span>Integridad verificada</span>
+          </div>
+          <div class="benefit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span>Trazabilidad por evento</span>
+          </div>
+          <div class="benefit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>
+            <span>Aprobaciones por rol</span>
+          </div>
+        </div>
+
+        <p class="trust-line animate-up delay-4">Pensado para equipos de finanzas y operaciones</p>
+        
+        <a href="mailto:contacto@nexumxestion.com" class="cta-button animate-up delay-5">Contactar</a>
+      </div>
+
+      <div class="mockup-section">
+        <div class="mockup-wrapper">
+          <div class="mockup-card card-1">
+            <div class="card-header">
+              <div class="skeleton-icon"></div>
+              <div class="skeleton-text-group">
+                <div class="skeleton-title"></div>
+                <div class="skeleton-subtitle"></div>
+              </div>
+              <div class="badge">Verificado</div>
+            </div>
+            <div class="card-body">
+              <div class="skeleton-line"></div>
+              <div class="skeleton-line short"></div>
+            </div>
+          </div>
+          <div class="mockup-card card-2">
+            <div class="card-header">
+              <div class="skeleton-icon alt"></div>
+              <div class="skeleton-text-group">
+                <div class="skeleton-title"></div>
+                <div class="skeleton-subtitle"></div>
+              </div>
+              <div class="badge alt">Aprobado</div>
+            </div>
+          </div>
+          <div class="mockup-card card-3">
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="dot"></div>
+                <div class="skeleton-line"></div>
+              </div>
+              <div class="timeline-item">
+                <div class="dot"></div>
+                <div class="skeleton-line short"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <footer class="animate-up delay-5">
+      <span>&copy; Nexum Xestion</span>
+      <span>Control Real</span>
+    </footer>
+  </div>
+</body>
+</html>
