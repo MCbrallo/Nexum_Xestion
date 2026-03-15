@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexum Xestion - Control Documental</title>
+    <title>Nexum Xestión - Digitalización y Orden Documental</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,9 +21,8 @@
                     colors: {
                         navy: '#1F2A44',
                         'navy-light': '#5C6F91',
-                        gold: '#D4B271',
-                        'gold-hover': '#B98A2E',
-                        'gold-dark': '#8c6d14',
+                        gold: '#B89449',
+                        'gold-hover': '#9A7A3A',
                         'bg-main': '#F7F6F3',
                         'bg-alt': '#F5F3EF',
                         border: '#E6E2DA',
@@ -54,7 +53,6 @@
             scroll-behavior: smooth;
         }
         
-        /* Animaciones de entrada suaves */
         .reveal {
             opacity: 0;
             transform: translateY(20px);
@@ -67,9 +65,7 @@
         .reveal-delay-1 { transition-delay: 0.1s; }
         .reveal-delay-2 { transition-delay: 0.2s; }
         .reveal-delay-3 { transition-delay: 0.3s; }
-        .reveal-delay-4 { transition-delay: 0.4s; }
 
-        /* Navbar transition */
         #navbar {
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -82,7 +78,6 @@
             padding-bottom: 1rem;
         }
 
-        /* FAQ Accordion */
         .faq-answer {
             max-height: 0;
             overflow: hidden;
@@ -95,7 +90,6 @@
             padding-bottom: 1rem;
         }
 
-        /* Mockup Shadow */
         .mockup-shadow {
             box-shadow: 0 20px 60px -15px rgba(31,42,68,0.1);
         }
@@ -116,42 +110,39 @@
                         </mask>
                     </defs>
                     <g mask="url(#keyhole-mask-nav)">
-                        <path d="M 50 85 L 21 85 L 24 42 L 32 44 V 30 A 18 18 0 0 1 50 12 V 22 A 8 8 0 0 0 42 30 V 42 H 45 V 36 H 50 Z" fill="#D4B271" />
-                        <path d="M 50 85 L 79 85 L 76 42 L 68 44 V 30 A 18 18 0 0 0 50 12 V 22 A 8 8 0 0 1 58 30 V 42 H 55 V 36 H 50 Z" fill="#B98A2E" />
+                        <path d="M 50 85 L 21 85 L 24 42 L 32 44 V 30 A 18 18 0 0 1 50 12 V 22 A 8 8 0 0 0 42 30 V 42 H 45 V 36 H 50 Z" fill="#B89449" />
+                        <path d="M 50 85 L 79 85 L 76 42 L 68 44 V 30 A 18 18 0 0 0 50 12 V 22 A 8 8 0 0 1 58 30 V 42 H 55 V 36 H 50 Z" fill="#9A7A3A" />
                     </g>
                 </svg>
-                <span class="font-serif text-2xl font-medium tracking-wide text-navy">Nexum Xestion</span>
+                <span class="font-serif text-2xl font-medium tracking-wide text-navy">Nexum Xestión</span>
             </div>
             
-            <!-- Desktop Menu -->
-            <div class="hidden lg:flex items-center gap-10">
-                <a href="#producto" class="text-sm font-medium text-text-sec hover:text-navy transition-colors">Producto</a>
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="#como-funciona" class="text-sm font-medium text-text-sec hover:text-navy transition-colors">Cómo funciona</a>
                 <a href="#beneficios" class="text-sm font-medium text-text-sec hover:text-navy transition-colors">Beneficios</a>
-                <a href="#flujo" class="text-sm font-medium text-text-sec hover:text-navy transition-colors">Flujo</a>
-                <a href="#seguridad" class="text-sm font-medium text-text-sec hover:text-navy transition-colors">Seguridad</a>
+                <a href="#casos-uso" class="text-sm font-medium text-text-sec hover:text-navy transition-colors">Casos de uso</a>
+                <a href="#orden-digital" class="text-sm font-medium text-text-sec hover:text-navy transition-colors">Orden digital</a>
                 <a href="#faq" class="text-sm font-medium text-text-sec hover:text-navy transition-colors">FAQ</a>
             </div>
 
             <div class="hidden lg:block">
-                <a href="#contacto" class="bg-gold hover:bg-gold-hover text-white text-sm font-medium px-6 py-3 rounded-lg transition-colors">
+                <a href="#contacto" class="bg-gold hover:bg-gold-hover text-white text-sm font-medium px-6 py-2.5 rounded-lg transition-colors">
                     Solicitar demo
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
             <button id="mobile-menu-btn" class="lg:hidden text-navy p-2">
                 <i data-lucide="menu" class="w-7 h-7" id="menu-icon"></i>
                 <i data-lucide="x" class="w-7 h-7 hidden" id="close-icon"></i>
             </button>
         </div>
 
-        <!-- Mobile Menu Panel -->
         <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 top-[76px] bg-white z-40 overflow-y-auto">
             <div class="flex flex-col px-6 pt-8 pb-12 gap-6">
-                <a href="#producto" class="mobile-link text-xl font-medium text-navy border-b border-border pb-4">Producto</a>
+                <a href="#como-funciona" class="mobile-link text-xl font-medium text-navy border-b border-border pb-4">Cómo funciona</a>
                 <a href="#beneficios" class="mobile-link text-xl font-medium text-navy border-b border-border pb-4">Beneficios</a>
-                <a href="#flujo" class="mobile-link text-xl font-medium text-navy border-b border-border pb-4">Flujo</a>
-                <a href="#seguridad" class="mobile-link text-xl font-medium text-navy border-b border-border pb-4">Seguridad</a>
+                <a href="#casos-uso" class="mobile-link text-xl font-medium text-navy border-b border-border pb-4">Casos de uso</a>
+                <a href="#orden-digital" class="mobile-link text-xl font-medium text-navy border-b border-border pb-4">Orden digital</a>
                 <a href="#faq" class="mobile-link text-xl font-medium text-navy border-b border-border pb-4">FAQ</a>
                 <a href="#contacto" class="mobile-link bg-gold text-white text-center font-medium px-6 py-4 rounded-lg mt-6 text-lg">
                     Solicitar demo
@@ -162,112 +153,133 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="min-h-screen flex flex-col justify-center pt-28 pb-4 px-6 md:px-12 max-w-[1360px] mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center w-full">
-                <div class="lg:col-span-6 flex flex-col gap-4">
-                    <h1 class="font-serif text-3xl md:text-4xl lg:text-[40px] leading-[1.1] text-gold-dark tracking-tight reveal">
-                        Control documental con trazabilidad real.
+        <section class="min-h-screen flex flex-col justify-center pt-28 pb-12 px-6 md:px-12 max-w-[1360px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center w-full" style="height: 485px;">
+                <div class="lg:col-span-6 flex flex-col gap-5" style="height: 495px;">
+                    <h1 class="font-serif text-4xl md:text-5xl lg:text-[52px] leading-[1.1] text-navy tracking-tight reveal" style="font-size: 33px; height: 38px;">
+                        Del papel al orden digital, de forma simple.
                     </h1>
-                    <p class="text-sm md:text-base text-text-sec leading-relaxed max-w-xl reveal reveal-delay-1">
-                        Centraliza documentos, evita duplicidades, verifica integridad y registra cada evento, acceso y aprobación en un historial claro, auditable y fácil de seguir.
+                    <p class="text-base md:text-lg text-text-sec leading-relaxed max-w-xl reveal reveal-delay-1" style="font-size: 15px;">
+                        Nexum Xestión ayuda a pequeñas y medianas empresas a transformar documentos físicos en archivos digitales organizados, accesibles y fáciles de localizar, sin depender de procesos manuales caóticos.
                     </p>
                     
-                    <div class="flex flex-col gap-2.5 mt-1 reveal reveal-delay-2">
-                        <div class="flex items-center gap-2.5 text-navy font-medium">
-                            <i data-lucide="check-circle-2" class="text-gold w-4 h-4" stroke-width="2.5"></i>
-                            <span class="text-sm">Integridad verificada</span>
+                    <div class="flex flex-col gap-3 mt-2 reveal reveal-delay-2">
+                        <div class="flex items-center gap-3 text-navy font-medium">
+                            <i data-lucide="scan-line" class="text-gold w-5 h-5"></i>
+                            <span class="text-base">Digitalización sencilla</span>
                         </div>
-                        <div class="flex items-center gap-2.5 text-navy font-medium">
-                            <i data-lucide="check-circle-2" class="text-gold w-4 h-4" stroke-width="2.5"></i>
-                            <span class="text-sm">Historial por evento</span>
+                        <div class="flex items-center gap-3 text-navy font-medium">
+                            <i data-lucide="folder-tree" class="text-gold w-5 h-5"></i>
+                            <span class="text-base">Organización clara</span>
                         </div>
-                        <div class="flex items-center gap-2.5 text-navy font-medium">
-                            <i data-lucide="check-circle-2" class="text-gold w-4 h-4" stroke-width="2.5"></i>
-                            <span class="text-sm">Aprobaciones por rol</span>
+                        <div class="flex items-center gap-3 text-navy font-medium">
+                            <i data-lucide="search" class="text-gold w-5 h-5"></i>
+                            <span class="text-base">Búsqueda rápida</span>
                         </div>
-                        <div class="flex items-center gap-2.5 text-navy font-medium">
-                            <i data-lucide="check-circle-2" class="text-gold w-4 h-4" stroke-width="2.5"></i>
-                            <span class="text-sm">Control de accesos</span>
+                        <div class="flex items-center gap-3 text-navy font-medium">
+                            <i data-lucide="user-check" class="text-gold w-5 h-5"></i>
+                            <span class="text-base">Menos dependencia externa</span>
                         </div>
                     </div>
 
-                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 mt-4 reveal reveal-delay-3">
-                        <a href="#contacto" class="bg-gold hover:bg-gold-hover text-white font-medium px-5 py-2.5 rounded-lg transition-colors w-full sm:w-auto text-center text-sm shadow-sm">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-6 reveal reveal-delay-3">
+                        <a href="#contacto" class="bg-gold hover:bg-gold-hover text-white font-medium px-6 py-3 rounded-lg transition-colors w-full sm:w-auto text-center text-base shadow-sm">
                             Solicitar demo
                         </a>
-                        <a href="#producto" class="text-navy font-medium px-5 py-2.5 rounded-lg border border-border hover:bg-navy/5 transition-colors w-full sm:w-auto text-center text-sm">
+                        <a href="#como-funciona" class="text-navy font-medium px-6 py-3 rounded-lg border border-border hover:bg-navy/5 transition-colors w-full sm:w-auto text-center text-base">
                             Ver cómo funciona
                         </a>
                     </div>
-                    <p class="text-xs text-text-sec mt-1 font-medium reveal reveal-delay-4">
-                        Pensado para equipos de finanzas y operaciones.
+                    <p class="text-sm text-text-sec mt-2 font-medium reveal reveal-delay-3" style="height: 28px; margin-top: -5px;">
+                        Diseñado para equipos que necesitan orden documental sin complejidad.
                     </p>
                 </div>
                 
-                <!-- Mockup UI -->
-                <div class="lg:col-span-6 lg:col-start-7 reveal reveal-delay-2">
-                    <div class="bg-white rounded-[16px] mockup-shadow border border-border overflow-hidden flex flex-col h-[360px] w-full max-w-[460px] mx-auto relative">
-                        <!-- Header -->
-                        <div class="border-b border-border p-3 flex justify-between items-center bg-bg-alt/50">
-                            <div class="flex items-center gap-2.5">
-                                <div class="w-7 h-7 rounded-lg bg-navy/5 flex items-center justify-center border border-navy/10">
-                                    <i data-lucide="file-text" class="text-navy w-3.5 h-3.5"></i>
-                                </div>
-                                <div>
-                                    <div class="text-[11px] font-semibold text-navy mb-0.5">Acuerdo_Marco_Proveedores_v3.pdf</div>
-                                    <div class="text-[9px] text-text-sec">Actualizado hoy, 10:42 AM</div>
+                <!-- Mockup UI: Digitalization Flow -->
+                <div class="lg:col-span-6 reveal reveal-delay-2" style="height: 493px; width: 530.5px;">
+                    <div class="bg-white rounded-2xl mockup-shadow border border-border overflow-hidden flex flex-col h-[420px] w-full max-w-[500px] mx-auto relative">
+                        <!-- App Header -->
+                        <div class="border-b border-border p-4 flex justify-between items-center bg-bg-alt/30">
+                            <div class="flex items-center gap-3">
+                                <div class="relative">
+                                    <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text-sec"></i>
+                                    <input type="text" placeholder="Buscar factura, contrato..." class="pl-9 pr-4 py-1.5 text-sm bg-white border border-border rounded-md w-64 focus:outline-none focus:border-gold">
                                 </div>
                             </div>
-                            <div class="px-2 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-[9px] font-semibold flex items-center gap-1.5">
-                                <div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
-                                Verificado
+                            <div class="flex items-center gap-2">
+                                <button class="bg-navy text-white px-3 py-1.5 rounded-md text-xs font-medium flex items-center gap-1.5">
+                                    <i data-lucide="upload" class="w-3.5 h-3.5"></i> Subir
+                                </button>
                             </div>
                         </div>
-                        <!-- Body -->
-                        <div class="flex flex-1 overflow-hidden">
-                            <!-- Document Preview Skeleton -->
-                            <div class="flex-1 p-5 border-r border-border bg-bg-main/30 flex flex-col gap-3">
-                                <div class="w-2/3 h-3 bg-border/60 rounded-md"></div>
-                                <div class="w-full h-1.5 bg-border/40 rounded-sm mt-1.5"></div>
-                                <div class="w-full h-1.5 bg-border/40 rounded-sm"></div>
-                                <div class="w-4/5 h-1.5 bg-border/40 rounded-sm"></div>
-                                <div class="w-full h-1.5 bg-border/40 rounded-sm mt-3"></div>
-                                <div class="w-5/6 h-1.5 bg-border/40 rounded-sm"></div>
-                                <div class="w-full h-1.5 bg-border/40 rounded-sm"></div>
+                        
+                        <!-- App Body -->
+                        <div class="flex flex-1 overflow-hidden bg-bg-main/20">
+                            <!-- Sidebar -->
+                            <div class="w-48 border-r border-border p-4 flex flex-col gap-4 bg-white">
+                                <div class="text-[10px] font-semibold text-text-sec uppercase tracking-wider">Carpetas</div>
+                                <div class="flex flex-col gap-2">
+                                    <div class="flex items-center gap-2 text-sm text-navy font-medium bg-navy/5 px-2 py-1.5 rounded">
+                                        <i data-lucide="folder" class="w-4 h-4 text-gold"></i> Facturas 2026
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm text-text-sec hover:text-navy px-2 py-1.5">
+                                        <i data-lucide="folder" class="w-4 h-4"></i> Contratos
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm text-text-sec hover:text-navy px-2 py-1.5">
+                                        <i data-lucide="folder" class="w-4 h-4"></i> RRHH
+                                    </div>
+                                </div>
+                                <div class="text-[10px] font-semibold text-text-sec uppercase tracking-wider mt-4">Etiquetas</div>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-1 bg-blue-50 text-blue-600 text-[10px] rounded border border-blue-100">Proveedores</span>
+                                    <span class="px-2 py-1 bg-emerald-50 text-emerald-600 text-[10px] rounded border border-emerald-100">Pagado</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Main Content: Upload Flow -->
+                            <div class="flex-1 p-5 flex flex-col">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h3 class="text-sm font-semibold text-navy">Nueva subida</h3>
+                                </div>
                                 
-                                <!-- Signature block skeleton -->
-                                <div class="mt-auto grid grid-cols-2 gap-3 pt-3 border-t border-border/50">
-                                    <div class="flex flex-col gap-1.5">
-                                        <div class="w-16 h-5 bg-navy/5 rounded border border-navy/10"></div>
-                                        <div class="w-20 h-1 bg-border/60 rounded-sm"></div>
+                                <div class="bg-white border border-border rounded-xl p-4 flex gap-4 shadow-sm relative overflow-hidden">
+                                    <!-- Scanning effect -->
+                                    <div class="absolute top-0 left-0 w-full h-0.5 bg-gold shadow-[0_0_8px_rgba(184,148,73,0.8)] animate-[scan_2s_ease-in-out_infinite]"></div>
+                                    
+                                    <div class="w-24 h-32 bg-bg-alt border border-border rounded flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="file-text" class="text-navy/20 w-8 h-8"></i>
                                     </div>
-                                    <div class="flex flex-col gap-1.5">
-                                        <div class="w-16 h-5 bg-navy/5 rounded border border-navy/10"></div>
-                                        <div class="w-20 h-1 bg-border/60 rounded-sm"></div>
+                                    <div class="flex-1 flex flex-col justify-center gap-3">
+                                        <div>
+                                            <div class="text-xs text-text-sec mb-1">Extrayendo datos...</div>
+                                            <div class="h-1.5 w-full bg-border rounded-full overflow-hidden">
+                                                <div class="h-full bg-gold w-3/4 rounded-full"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="grid grid-cols-2 gap-2 mt-2">
+                                            <div class="bg-bg-main p-2 rounded border border-border/50">
+                                                <div class="text-[9px] text-text-sec">Tipo sugerido</div>
+                                                <div class="text-xs font-medium text-navy flex items-center gap-1 mt-0.5">
+                                                    <i data-lucide="receipt" class="w-3 h-3 text-gold"></i> Factura
+                                                </div>
+                                            </div>
+                                            <div class="bg-bg-main p-2 rounded border border-border/50">
+                                                <div class="text-[9px] text-text-sec">Fecha detectada</div>
+                                                <div class="text-xs font-medium text-navy mt-0.5">15 Mar 2026</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- Sidebar Timeline -->
-                            <div class="w-40 p-3 bg-white flex flex-col gap-4 overflow-y-auto">
-                                <div class="text-[9px] font-bold text-navy uppercase tracking-widest">Audit Trail</div>
-                                <div class="relative pl-3 border-l border-border flex flex-col gap-4">
-                                    <div class="relative">
-                                        <div class="absolute -left-[17px] top-1 w-2 h-2 rounded-full bg-emerald-500 border-2 border-white shadow-sm"></div>
-                                        <div class="text-[11px] font-semibold text-navy mb-0.5">Aprobación Final</div>
-                                        <div class="text-[9px] text-text-sec mb-1">M. López (Dir. Finanzas)</div>
-                                        <div class="inline-block px-1.5 py-0.5 bg-bg-main rounded text-[8px] font-mono text-navy-light">v3.0 • 10:42</div>
-                                    </div>
-                                    <div class="relative">
-                                        <div class="absolute -left-[17px] top-1 w-2 h-2 rounded-full bg-gold border-2 border-white shadow-sm"></div>
-                                        <div class="text-[11px] font-semibold text-navy mb-0.5">Revisión Legal</div>
-                                        <div class="text-[9px] text-text-sec mb-1">A. García (Legal)</div>
-                                        <div class="inline-block px-1.5 py-0.5 bg-bg-main rounded text-[8px] font-mono text-navy-light">v2.1 • 09:15</div>
-                                    </div>
-                                    <div class="relative">
-                                        <div class="absolute -left-[17px] top-1 w-2 h-2 rounded-full bg-border border-2 border-white shadow-sm"></div>
-                                        <div class="text-[11px] font-semibold text-navy mb-0.5">Documento Subido</div>
-                                        <div class="text-[9px] text-text-sec mb-1">C. Ruiz (Operaciones)</div>
-                                        <div class="inline-block px-1.5 py-0.5 bg-bg-main rounded text-[8px] font-mono text-navy-light">v1.0 • Ayer</div>
+                                
+                                <div class="mt-4">
+                                    <div class="text-xs font-medium text-navy mb-2">Documentos recientes</div>
+                                    <div class="flex items-center justify-between p-2.5 bg-white border border-border rounded-lg">
+                                        <div class="flex items-center gap-3">
+                                            <i data-lucide="file-text" class="text-navy-light w-4 h-4"></i>
+                                            <span class="text-xs font-medium text-navy">Contrato_Alquiler_Local.pdf</span>
+                                        </div>
+                                        <span class="text-[10px] text-text-sec">Hace 2 horas</span>
                                     </div>
                                 </div>
                             </div>
@@ -277,376 +289,394 @@
             </div>
         </section>
 
-        <!-- Credibility Section -->
-        <section class="border-y border-border bg-white py-10 overflow-hidden">
+        <!-- El Problema -->
+        <section class="py-20 bg-white border-y border-border">
             <div class="max-w-[1360px] mx-auto px-6 md:px-12">
-                <div class="flex flex-wrap justify-center md:justify-between items-center gap-8 md:gap-4">
-                    <div class="flex items-center gap-3 text-base font-medium text-navy-light reveal">
-                        <div class="w-2 h-2 rounded-full bg-gold"></div> Registro claro de eventos
-                    </div>
-                    <div class="flex items-center gap-3 text-base font-medium text-navy-light reveal reveal-delay-1">
-                        <div class="w-2 h-2 rounded-full bg-gold"></div> Versionado controlado
-                    </div>
-                    <div class="flex items-center gap-3 text-base font-medium text-navy-light reveal reveal-delay-2">
-                        <div class="w-2 h-2 rounded-full bg-gold"></div> Validación documental
-                    </div>
-                    <div class="flex items-center gap-3 text-base font-medium text-navy-light reveal reveal-delay-3">
-                        <div class="w-2 h-2 rounded-full bg-gold"></div> Trazabilidad de accesos
-                    </div>
-                    <div class="flex items-center gap-3 text-base font-medium text-navy-light reveal reveal-delay-4">
-                        <div class="w-2 h-2 rounded-full bg-gold"></div> Flujos estructurados
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Why it matters -->
-        <section id="beneficios" class="min-h-screen flex flex-col justify-center py-12 px-6 md:px-12 max-w-[1360px] mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-8 w-full reveal">
-                <h2 class="font-serif text-3xl md:text-[32px] text-navy mb-4 leading-tight">Menos fricción operativa. Más control.</h2>
-                <p class="text-lg text-text-sec leading-relaxed">Un sistema diseñado para eliminar la incertidumbre en la gestión documental de tu empresa, aportando claridad a cada proceso.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Card 1 -->
-                <div class="bg-white p-8 rounded-[16px] border border-border shadow-sm hover:shadow-md transition-shadow reveal">
-                    <div class="w-12 h-12 rounded-xl bg-bg-main flex items-center justify-center mb-6 border border-border/50">
-                        <i data-lucide="file-text" class="text-gold w-6 h-6" stroke-width="1.5"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-navy mb-3">Evita versiones duplicadas</h3>
-                    <p class="text-sm text-text-sec leading-relaxed">Mantén una única fuente de verdad. Se acabó el caos de correos con documentos adjuntos y versiones desactualizadas.</p>
-                </div>
-                <!-- Card 2 -->
-                <div class="bg-white p-8 rounded-[16px] border border-border shadow-sm hover:shadow-md transition-shadow reveal reveal-delay-1">
-                    <div class="w-12 h-12 rounded-xl bg-bg-main flex items-center justify-center mb-6 border border-border/50">
-                        <i data-lucide="shield-check" class="text-gold w-6 h-6" stroke-width="1.5"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-navy mb-3">Reduce errores de validación</h3>
-                    <p class="text-sm text-text-sec leading-relaxed">Asegura que cada documento cumple con los requisitos exactos antes de avanzar en el flujo operativo.</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="bg-white p-8 rounded-[16px] border border-border shadow-sm hover:shadow-md transition-shadow reveal reveal-delay-2">
-                    <div class="w-12 h-12 rounded-xl bg-bg-main flex items-center justify-center mb-6 border border-border/50">
-                        <i data-lucide="clock" class="text-gold w-6 h-6" stroke-width="1.5"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-navy mb-3">Acelera revisiones internas</h3>
-                    <p class="text-sm text-text-sec leading-relaxed">Notificaciones automáticas y flujos claros que eliminan cuellos de botella entre departamentos.</p>
-                </div>
-                <!-- Card 4 -->
-                <div class="bg-white p-8 rounded-[16px] border border-border shadow-sm hover:shadow-md transition-shadow reveal reveal-delay-3">
-                    <div class="w-12 h-12 rounded-xl bg-bg-main flex items-center justify-center mb-6 border border-border/50">
-                        <i data-lucide="history" class="text-gold w-6 h-6" stroke-width="1.5"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-navy mb-3">Conserva evidencia clara</h3>
-                    <p class="text-sm text-text-sec leading-relaxed">Historial inmutable preparado para cualquier auditoría interna o requerimiento normativo externo.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- How it works -->
-        <section id="flujo" class="min-h-screen flex flex-col justify-center py-12 bg-white border-y border-border">
-            <div class="max-w-[1360px] mx-auto px-6 md:px-12 w-full">
-                <div class="text-center max-w-3xl mx-auto mb-10 reveal">
-                    <h2 class="font-serif text-3xl md:text-[32px] text-navy mb-4 leading-tight">Flujo de trabajo estructurado</h2>
-                    <p class="text-lg text-text-sec leading-relaxed">Tres pasos para recuperar el control de tus documentos críticos y asegurar su integridad.</p>
+                <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+                    <h2 class="font-serif text-3xl md:text-[32px] text-navy mb-4 leading-tight">El problema no es solo guardar documentos. Es poder encontrarlos y entender cómo están organizados.</h2>
+                    <p class="text-lg text-text-sec leading-relaxed">Muchas pymes acumulan archivos en papel, PDFs sueltos, carpetas duplicadas y correos. El resultado es pérdida de tiempo, errores y dependencia de procesos manuales.</p>
                 </div>
                 
-                <div class="relative">
-                    <!-- Desktop connecting line -->
-                    <div class="hidden md:block absolute top-8 left-[10%] right-[10%] h-px bg-border"></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-bg-main p-6 rounded-xl border border-border reveal">
+                        <i data-lucide="files" class="text-navy-light w-6 h-6 mb-4"></i>
+                        <h3 class="text-base font-semibold text-navy mb-2">Físico y disperso</h3>
+                        <p class="text-sm text-text-sec">Documentos en papel difíciles de centralizar y compartir con el equipo.</p>
+                    </div>
+                    <div class="bg-bg-main p-6 rounded-xl border border-border reveal reveal-delay-1">
+                        <i data-lucide="folder-search" class="text-navy-light w-6 h-6 mb-4"></i>
+                        <h3 class="text-base font-semibold text-navy mb-2">Caos digital</h3>
+                        <p class="text-sm text-text-sec">Archivos dispersos, mal nombrados y en carpetas sin una estructura lógica.</p>
+                    </div>
+                    <div class="bg-bg-main p-6 rounded-xl border border-border reveal reveal-delay-2">
+                        <i data-lucide="clock" class="text-navy-light w-6 h-6 mb-4"></i>
+                        <h3 class="text-base font-semibold text-navy mb-2">Pérdida de tiempo</h3>
+                        <p class="text-sm text-text-sec">Horas perdidas buscando esa factura o contrato que necesitas urgentemente.</p>
+                    </div>
+                    <div class="bg-bg-main p-6 rounded-xl border border-border reveal reveal-delay-3">
+                        <i data-lucide="users" class="text-navy-light w-6 h-6 mb-4"></i>
+                        <h3 class="text-base font-semibold text-navy mb-2">Dependencia externa</h3>
+                        <p class="text-sm text-text-sec">Procesos demasiado manuales o dependencia de gestorías para mantener el orden básico.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Qué hace Nexum Xestión -->
+        <section id="como-funciona" class="py-24 bg-bg-main">
+            <div class="max-w-[1360px] mx-auto px-6 md:px-12">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <h2 class="font-serif text-3xl md:text-[32px] text-navy mb-4 leading-tight">Una app pensada para facilitar la transición al orden digital.</h2>
+                    <p class="text-lg text-text-sec leading-relaxed">Nexum Xestión te ayuda a convertir documentación física en archivos digitales útiles, bien clasificados y fáciles de recuperar.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                    <!-- Línea conectora desktop -->
+                    <div class="hidden md:block absolute top-6 left-[12%] right-[12%] h-px bg-border"></div>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
-                        <div class="flex flex-col items-center text-center bg-white px-4 reveal">
-                            <div class="w-16 h-16 rounded-full bg-bg-main border border-border flex items-center justify-center font-serif text-2xl text-gold mb-6 shadow-sm">01</div>
-                            <h3 class="text-xl font-semibold text-navy mb-3">Centraliza y organiza</h3>
-                            <p class="text-text-sec text-base leading-relaxed max-w-sm">Sube tus documentos a un entorno seguro, estructurado y accesible solo para personal autorizado.</p>
+                    <div class="relative flex flex-col items-center text-center reveal">
+                        <div class="w-12 h-12 bg-white border border-border rounded-full flex items-center justify-center text-gold font-serif text-xl mb-6 shadow-sm z-10 relative">1</div>
+                        <div class="bg-white p-4 rounded-xl border border-border shadow-sm w-full mb-4 flex justify-center">
+                            <i data-lucide="upload-cloud" class="text-navy w-8 h-8"></i>
                         </div>
-                        <div class="flex flex-col items-center text-center bg-white px-4 reveal reveal-delay-1">
-                            <div class="w-16 h-16 rounded-full bg-bg-main border border-border flex items-center justify-center font-serif text-2xl text-gold mb-6 shadow-sm">02</div>
-                            <h3 class="text-xl font-semibold text-navy mb-3">Define permisos y flujos</h3>
-                            <p class="text-text-sec text-base leading-relaxed max-w-sm">Asigna roles específicos, aprobadores requeridos y reglas de visibilidad por documento o carpeta.</p>
+                        <h3 class="text-lg font-semibold text-navy mb-2">Escanea o sube</h3>
+                        <p class="text-sm text-text-sec">Carga tus documentos físicos o digitales fácilmente a la plataforma.</p>
+                    </div>
+
+                    <div class="relative flex flex-col items-center text-center reveal reveal-delay-1">
+                        <div class="w-12 h-12 bg-white border border-border rounded-full flex items-center justify-center text-gold font-serif text-xl mb-6 shadow-sm z-10 relative">2</div>
+                        <div class="bg-white p-4 rounded-xl border border-border shadow-sm w-full mb-4 flex justify-center">
+                            <i data-lucide="file-json" class="text-navy w-8 h-8"></i>
                         </div>
-                        <div class="flex flex-col items-center text-center bg-white px-4 reveal reveal-delay-2">
-                            <div class="w-16 h-16 rounded-full bg-bg-main border border-border flex items-center justify-center font-serif text-2xl text-gold mb-6 shadow-sm">03</div>
-                            <h3 class="text-xl font-semibold text-navy mb-3">Consulta el historial</h3>
-                            <p class="text-text-sec text-base leading-relaxed max-w-sm">Audita cada acceso, cambio de versión y aprobación en tiempo real con un registro inmutable.</p>
+                        <h3 class="text-lg font-semibold text-navy mb-2">Convierte y estructura</h3>
+                        <p class="text-sm text-text-sec">La app extrae datos básicos para dar contexto al archivo.</p>
+                    </div>
+
+                    <div class="relative flex flex-col items-center text-center reveal reveal-delay-2">
+                        <div class="w-12 h-12 bg-white border border-border rounded-full flex items-center justify-center text-gold font-serif text-xl mb-6 shadow-sm z-10 relative">3</div>
+                        <div class="bg-white p-4 rounded-xl border border-border shadow-sm w-full mb-4 flex justify-center">
+                            <i data-lucide="folder-tree" class="text-navy w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-navy mb-2">Clasifica con lógica</h3>
+                        <p class="text-sm text-text-sec">Asigna categorías, etiquetas y guárdalo en la carpeta correcta.</p>
+                    </div>
+
+                    <div class="relative flex flex-col items-center text-center reveal reveal-delay-3">
+                        <div class="w-12 h-12 bg-white border border-border rounded-full flex items-center justify-center text-gold font-serif text-xl mb-6 shadow-sm z-10 relative">4</div>
+                        <div class="bg-white p-4 rounded-xl border border-border shadow-sm w-full mb-4 flex justify-center">
+                            <i data-lucide="search" class="text-navy w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-navy mb-2">Encuentra en segundos</h3>
+                        <p class="text-sm text-text-sec">Usa el buscador o los filtros para localizar cualquier documento al instante.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beneficios -->
+        <section id="beneficios" class="py-24 bg-white border-b border-border">
+            <div class="max-w-[1360px] mx-auto px-6 md:px-12">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <h2 class="font-serif text-3xl md:text-[32px] text-navy mb-4 leading-tight" style="width: 767px; height: 12px;">Menos caos documental. Más claridad operativa.</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="p-6 border border-border rounded-xl hover:shadow-md transition-shadow reveal">
+                        <i data-lucide="smartphone" class="text-gold w-6 h-6 mb-4"></i>
+                        <h3 class="text-lg font-semibold text-navy mb-2">Del papel al digital</h3>
+                        <p class="text-sm text-text-sec">Facilita la transición de archivos físicos a un entorno digital seguro y accesible.</p>
+                    </div>
+                    <div class="p-6 border border-border rounded-xl hover:shadow-md transition-shadow reveal reveal-delay-1">
+                        <i data-lucide="layout-list" class="text-gold w-6 h-6 mb-4"></i>
+                        <h3 class="text-lg font-semibold text-navy mb-2">Orden simple y consistente</h3>
+                        <p class="text-sm text-text-sec">Mantén una estructura lógica que todo el equipo pueda entender y seguir.</p>
+                    </div>
+                    <div class="p-6 border border-border rounded-xl hover:shadow-md transition-shadow reveal reveal-delay-2">
+                        <i data-lucide="zap" class="text-gold w-6 h-6 mb-4"></i>
+                        <h3 class="text-lg font-semibold text-navy mb-2">Encuentra rápido</h3>
+                        <p class="text-sm text-text-sec">Se acabó rebuscar en carpetas. Localiza lo que necesitas con búsquedas precisas.</p>
+                    </div>
+                    <div class="p-6 border border-border rounded-xl hover:shadow-md transition-shadow reveal">
+                        <i data-lucide="shield-alert" class="text-gold w-6 h-6 mb-4"></i>
+                        <h3 class="text-lg font-semibold text-navy mb-2">Reduce errores</h3>
+                        <p class="text-sm text-text-sec">Minimiza la pérdida de documentos y los errores derivados de la desorganización.</p>
+                    </div>
+                    <div class="p-6 border border-border rounded-xl hover:shadow-md transition-shadow reveal reveal-delay-1">
+                        <i data-lucide="briefcase" class="text-gold w-6 h-6 mb-4"></i>
+                        <h3 class="text-lg font-semibold text-navy mb-2">Facilita la administración</h3>
+                        <p class="text-sm text-text-sec">Agiliza el trabajo diario del equipo administrativo con herramientas claras.</p>
+                    </div>
+                    <div class="p-6 border border-border rounded-xl hover:shadow-md transition-shadow reveal reveal-delay-2">
+                        <i data-lucide="user-check" class="text-gold w-6 h-6 mb-4"></i>
+                        <h3 class="text-lg font-semibold text-navy mb-2">Gana autonomía</h3>
+                        <p class="text-sm text-text-sec">Gestiona tu documentación básica sin depender constantemente de terceros.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Funcionalidades -->
+        <section class="py-24 bg-bg-main">
+            <div class="max-w-[1360px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="font-serif text-3xl md:text-[32px] text-navy mb-6 leading-tight">Herramientas para el orden diario</h2>
+                    <ul class="flex flex-col gap-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="text-gold w-5 h-5 mt-0.5 flex-shrink-0"></i>
+                            <div>
+                                <span class="font-semibold text-navy block">Escaneo y subida ágil</span>
+                                <span class="text-sm text-text-sec">Digitalización asistida para subir documentos rápidamente.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="text-gold w-5 h-5 mt-0.5 flex-shrink-0"></i>
+                            <div>
+                                <span class="font-semibold text-navy block">Clasificación guiada</span>
+                                <span class="text-sm text-text-sec">Asigna tipos documentales, etiquetas y categorías sin esfuerzo.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="text-gold w-5 h-5 mt-0.5 flex-shrink-0"></i>
+                            <div>
+                                <span class="font-semibold text-navy block">Contexto del documento</span>
+                                <span class="text-sm text-text-sec">Historial de ubicación y recordatorio visual de dónde se guardó.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="text-gold w-5 h-5 mt-0.5 flex-shrink-0"></i>
+                            <div>
+                                <span class="font-semibold text-navy block">Gestión de recurrentes</span>
+                                <span class="text-sm text-text-sec">Manejo sencillo de facturas mensuales o contratos habituales.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <div class="bg-white p-6 rounded-2xl border border-border shadow-sm">
+                        <div class="flex items-center gap-2 mb-4 pb-4 border-b border-border">
+                            <i data-lucide="tag" class="text-navy-light w-4 h-4"></i>
+                            <span class="text-sm font-medium text-navy">Clasificación de documento</span>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-xs text-text-sec block mb-1">Tipo de documento</label>
+                                <div class="bg-bg-main border border-border rounded px-3 py-2 text-sm text-navy flex justify-between items-center">
+                                    Contrato de Servicios <i data-lucide="chevron-down" class="w-4 h-4 text-text-sec"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-xs text-text-sec block mb-1">Etiquetas</label>
+                                <div class="flex gap-2">
+                                    <span class="bg-navy/5 text-navy px-2 py-1 rounded text-xs border border-navy/10 flex items-center gap-1">
+                                        Proveedor <i data-lucide="x" class="w-3 h-3"></i>
+                                    </span>
+                                    <span class="bg-navy/5 text-navy px-2 py-1 rounded text-xs border border-navy/10 flex items-center gap-1">
+                                        2026 <i data-lucide="x" class="w-3 h-3"></i>
+                                    </span>
+                                    <span class="text-gold text-xs font-medium px-2 py-1 flex items-center gap-1 cursor-pointer">
+                                        <i data-lucide="plus" class="w-3 h-3"></i> Añadir
+                                    </span>
+                                </div>
+                            </div>
+                            <button class="w-full bg-navy text-white text-sm font-medium py-2 rounded mt-2">Guardar clasificación</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Features -->
-        <section id="producto" class="min-h-screen flex flex-col justify-center py-12 px-6 md:px-12 max-w-[1360px] mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full">
-                <div class="lg:col-span-5 flex flex-col justify-center reveal">
-                    <h2 class="font-serif text-3xl md:text-[32px] text-navy mb-4 leading-tight">Capacidades core del sistema</h2>
-                    <p class="text-lg text-text-sec mb-8 leading-relaxed">Todo lo necesario para garantizar la integridad, seguridad y trazabilidad de la información en tu organización.</p>
-                    <a href="#contacto" class="inline-flex items-center gap-2 text-gold font-medium hover:text-gold-hover transition-colors text-base">
-                        Solicitar demostración técnica <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
+        <!-- Específico PYMES -->
+        <section class="py-24 bg-navy text-white">
+            <div class="max-w-[1360px] mx-auto px-6 md:px-12">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <h2 class="font-serif text-3xl md:text-[32px] mb-4 leading-tight">Digitalización útil para pequeñas y medianas empresas.</h2>
+                    <p class="text-lg text-white/70 leading-relaxed" style="font-size: 16px; height: 39px;">Muchas pymes quieren digitalizarse, pero no necesitan sistemas enormes ni complejos. Necesitan una solución clara, simple y útil para empezar a ordenar su documentación de forma práctica.</p>
                 </div>
-                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="flex items-center gap-4 p-4 rounded-[14px] border border-border bg-white shadow-sm reveal">
-                        <div class="w-10 h-10 rounded-xl bg-bg-main flex items-center justify-center flex-shrink-0 border border-border/50">
-                            <i data-lucide="history" class="text-navy-light w-5 h-5" stroke-width="1.5"></i>
-                        </div>
-                        <span class="font-medium text-base text-navy">Control de versiones</span>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white/5 border border-white/10 p-8 rounded-xl backdrop-blur-sm reveal">
+                        <i data-lucide="mouse-pointer-click" class="text-gold w-8 h-8 mb-5"></i>
+                        <h3 class="text-xl font-semibold mb-3">Menos carga manual</h3>
+                        <p class="text-white/60 text-sm leading-relaxed">Automatiza la organización básica y reduce el tiempo dedicado a archivar y buscar papeles.</p>
                     </div>
-                    <div class="flex items-center gap-4 p-4 rounded-[14px] border border-border bg-white shadow-sm reveal reveal-delay-1">
-                        <div class="w-10 h-10 rounded-xl bg-bg-main flex items-center justify-center flex-shrink-0 border border-border/50">
-                            <i data-lucide="file-check" class="text-navy-light w-5 h-5" stroke-width="1.5"></i>
-                        </div>
-                        <span class="font-medium text-base text-navy">Verificación documental</span>
+                    <div class="bg-white/5 border border-white/10 p-8 rounded-xl backdrop-blur-sm reveal reveal-delay-1">
+                        <i data-lucide="building" class="text-gold w-8 h-8 mb-5"></i>
+                        <h3 class="text-xl font-semibold mb-3">Menos dependencia</h3>
+                        <p class="text-white/60 text-sm leading-relaxed">Facilita procesos internos y reduce la fricción de depender de gestorías para mantener el orden básico.</p>
                     </div>
-                    <div class="flex items-center gap-4 p-4 rounded-[14px] border border-border bg-white shadow-sm reveal">
-                        <div class="w-10 h-10 rounded-xl bg-bg-main flex items-center justify-center flex-shrink-0 border border-border/50">
-                            <i data-lucide="clock" class="text-navy-light w-5 h-5" stroke-width="1.5"></i>
-                        </div>
-                        <span class="font-medium text-base text-navy">Trazabilidad por evento</span>
-                    </div>
-                    <div class="flex items-center gap-4 p-4 rounded-[14px] border border-border bg-white shadow-sm reveal reveal-delay-1">
-                        <div class="w-10 h-10 rounded-xl bg-bg-main flex items-center justify-center flex-shrink-0 border border-border/50">
-                            <i data-lucide="users" class="text-navy-light w-5 h-5" stroke-width="1.5"></i>
-                        </div>
-                        <span class="font-medium text-base text-navy">Historial de accesos</span>
-                    </div>
-                    <div class="flex items-center gap-4 p-4 rounded-[14px] border border-border bg-white shadow-sm reveal">
-                        <div class="w-10 h-10 rounded-xl bg-bg-main flex items-center justify-center flex-shrink-0 border border-border/50">
-                            <i data-lucide="check-circle-2" class="text-navy-light w-5 h-5" stroke-width="1.5"></i>
-                        </div>
-                        <span class="font-medium text-base text-navy">Aprobaciones por rol</span>
-                    </div>
-                    <div class="flex items-center gap-4 p-4 rounded-[14px] border border-border bg-white shadow-sm reveal reveal-delay-1">
-                        <div class="w-10 h-10 rounded-xl bg-bg-main flex items-center justify-center flex-shrink-0 border border-border/50">
-                            <i data-lucide="shield-check" class="text-navy-light w-5 h-5" stroke-width="1.5"></i>
-                        </div>
-                        <span class="font-medium text-base text-navy">Registro auditable</span>
-                    </div>
-                    <div class="flex items-center gap-4 p-4 rounded-[14px] border border-border bg-white shadow-sm reveal">
-                        <div class="w-10 h-10 rounded-xl bg-bg-main flex items-center justify-center flex-shrink-0 border border-border/50">
-                            <i data-lucide="key" class="text-navy-light w-5 h-5" stroke-width="1.5"></i>
-                        </div>
-                        <span class="font-medium text-base text-navy">Permisos por usuario o equipo</span>
-                    </div>
-                    <div class="flex items-center gap-4 p-4 rounded-[14px] border border-border bg-white shadow-sm reveal reveal-delay-1">
-                        <div class="w-10 h-10 rounded-xl bg-bg-main flex items-center justify-center flex-shrink-0 border border-border/50">
-                            <i data-lucide="file-text" class="text-navy-light w-5 h-5" stroke-width="1.5"></i>
-                        </div>
-                        <span class="font-medium text-base text-navy">Consulta rápida de estado</span>
+                    <div class="bg-white/5 border border-white/10 p-8 rounded-xl backdrop-blur-sm reveal reveal-delay-2">
+                        <i data-lucide="unlock" class="text-gold w-8 h-8 mb-5"></i>
+                        <h3 class="text-xl font-semibold mb-3">Más autonomía</h3>
+                        <p class="text-white/60 text-sm leading-relaxed">Capacidad total para consultar, gestionar y mantener tus archivos al día desde cualquier lugar.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Security & Control -->
-        <section id="seguridad" class="min-h-screen flex flex-col justify-center py-12 bg-navy text-white">
-            <div class="max-w-[1360px] mx-auto px-6 md:px-12 w-full">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                    <div class="reveal">
-                        <h2 class="font-serif text-3xl md:text-[32px] mb-4 leading-tight">Control claro para procesos sensibles.</h2>
-                        <p class="text-lg text-white/70 mb-10 leading-relaxed">
-                            Cada interacción deja rastro. Cada versión queda identificada. Cada aprobación puede consultarse. Preparado para entornos donde la trazabilidad y el control son críticos.
-                        </p>
+        <!-- Orden y Recuperación -->
+        <section id="orden-digital" class="py-24 bg-white border-b border-border">
+            <div class="max-w-[1360px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 reveal">
+                    <div class="bg-bg-main rounded-2xl border border-border p-6 shadow-sm">
+                        <!-- Search Bar -->
+                        <div class="relative mb-6">
+                            <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-text-sec"></i>
+                            <input type="text" placeholder="Buscar por nombre, empresa, etiqueta..." class="w-full pl-10 pr-4 py-3 border border-border rounded-lg focus:outline-none focus:border-gold text-sm shadow-sm">
+                        </div>
                         
-                        <div class="flex flex-col gap-6">
-                            <div class="flex gap-4">
-                                <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="history" class="text-gold w-6 h-6" stroke-width="1.5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-medium mb-2">Registro de actividad</h4>
-                                    <p class="text-white/60 text-sm leading-relaxed">Log inmutable de cada acción realizada sobre un documento, indicando quién, cuándo y qué.</p>
+                        <!-- Filters -->
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1.5 bg-white border border-border rounded-full text-xs text-navy font-medium flex items-center gap-1 cursor-pointer hover:border-gold transition-colors">
+                                Tipo: Factura <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                            </span>
+                            <span class="px-3 py-1.5 bg-white border border-border rounded-full text-xs text-navy font-medium flex items-center gap-1 cursor-pointer hover:border-gold transition-colors">
+                                Fecha: Este mes <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                            </span>
+                            <span class="px-3 py-1.5 bg-white border border-border rounded-full text-xs text-navy font-medium flex items-center gap-1 cursor-pointer hover:border-gold transition-colors">
+                                Etiqueta <i data-lucide="plus" class="w-3 h-3"></i>
+                            </span>
+                        </div>
+                        
+                        <!-- Results -->
+                        <div class="space-y-3">
+                            <div class="text-xs font-semibold text-text-sec uppercase tracking-wider mb-2">Resultados recientes</div>
+                            <div class="bg-white p-3 border border-border rounded-lg flex items-center justify-between hover:border-gold transition-colors cursor-pointer">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 bg-red-50 text-red-500 rounded flex items-center justify-center">
+                                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium text-navy">Factura_TechCorp_Marzo.pdf</div>
+                                        <div class="text-[10px] text-text-sec">Carpeta: Facturas 2026 • Subido ayer</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex gap-4">
-                                <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="lock" class="text-gold w-6 h-6" stroke-width="1.5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-medium mb-2">Permisos estructurados</h4>
-                                    <p class="text-white/60 text-sm leading-relaxed">Control granular de acceso basado en roles. Define exactamente quién puede ver, editar o aprobar.</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4">
-                                <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="shield-check" class="text-gold w-6 h-6" stroke-width="1.5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-medium mb-2">Evidencia documental</h4>
-                                    <p class="text-white/60 text-sm leading-relaxed">Garantía de integridad para auditorías internas o requerimientos normativos externos.</p>
+                            <div class="bg-white p-3 border border-border rounded-lg flex items-center justify-between hover:border-gold transition-colors cursor-pointer">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 bg-blue-50 text-blue-500 rounded flex items-center justify-center">
+                                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium text-navy">Contrato_Mantenimiento_v2.docx</div>
+                                        <div class="text-[10px] text-text-sec">Carpeta: Proveedores • Subido hace 3 días</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Visual Audit Trail -->
-                    <div class="bg-white/5 border border-white/10 rounded-[20px] p-8 backdrop-blur-sm reveal reveal-delay-2">
-                        <div class="text-xs font-semibold text-white/40 uppercase tracking-widest mb-8">Audit Trail Log</div>
-                        <div class="flex flex-col gap-6 relative before:absolute before:inset-y-3 before:left-[11px] before:w-px before:bg-white/10">
-                            <div class="relative flex gap-6">
-                                <div class="w-6 h-6 rounded-full bg-emerald-500/20 border border-emerald-500 flex items-center justify-center flex-shrink-0 z-10">
-                                    <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="flex justify-between items-start mb-1.5">
-                                        <span class="font-medium text-base">Documento Aprobado</span>
-                                        <span class="text-xs text-white/50">Hoy, 10:42</span>
-                                    </div>
-                                    <div class="text-sm text-white/70">Por: Marta López (Dir. Financiera)</div>
-                                    <div class="mt-2 inline-block px-2.5 py-1 rounded-md bg-white/10 text-[10px] font-mono text-white/60">v2.0.FINAL</div>
-                                </div>
-                            </div>
-                            <div class="relative flex gap-6">
-                                <div class="w-6 h-6 rounded-full bg-gold/20 border border-gold flex items-center justify-center flex-shrink-0 z-10">
-                                    <div class="w-2 h-2 rounded-full bg-gold"></div>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="flex justify-between items-start mb-1.5">
-                                        <span class="font-medium text-base">Nueva Versión Subida</span>
-                                        <span class="text-xs text-white/50">Ayer, 16:30</span>
-                                    </div>
-                                    <div class="text-sm text-white/70">Por: Carlos Ruiz (Operaciones)</div>
-                                </div>
-                            </div>
-                            <div class="relative flex gap-6">
-                                <div class="w-6 h-6 rounded-full bg-white/10 border border-white/30 flex items-center justify-center flex-shrink-0 z-10">
-                                    <div class="w-2 h-2 rounded-full bg-white/50"></div>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="flex justify-between items-start mb-1.5">
-                                        <span class="font-medium text-base">Permisos Modificados</span>
-                                        <span className="text-xs text-white/50">Ayer, 09:15</span>
-                                    </div>
-                                    <div class="text-sm text-white/70">Acceso concedido a: Equipo Legal</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+                <div class="order-1 lg:order-2 reveal reveal-delay-2">
+                    <h2 class="font-serif text-3xl md:text-[32px] text-navy mb-4 leading-tight">No basta con digitalizar. Hay que poder recuperar todo fácilmente.</h2>
+                    <p class="text-lg text-text-sec leading-relaxed mb-6">Nexum Xestión te ayuda a recordar dónde está cada documento y a no perder tiempo navegando por carpetas caóticas.</p>
+                    <ul class="space-y-3 text-navy font-medium">
+                        <li class="flex items-center gap-2"><i data-lucide="arrow-right" class="text-gold w-4 h-4"></i> Buscador global avanzado</li>
+                        <li class="flex items-center gap-2"><i data-lucide="arrow-right" class="text-gold w-4 h-4"></i> Filtros por tipo, fecha o proveedor</li>
+                        <li class="flex items-center gap-2"><i data-lucide="arrow-right" class="text-gold w-4 h-4"></i> Acceso rápido a documentos recientes</li>
+                        <li class="flex items-center gap-2"><i data-lucide="arrow-right" class="text-gold w-4 h-4"></i> Sugerencias visuales de ubicación</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Use Cases -->
-        <section class="min-h-screen flex flex-col justify-center py-12 px-6 md:px-12 max-w-[1360px] mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-8 w-full reveal">
-                <h2 class="font-serif text-3xl md:text-[32px] text-navy mb-4 leading-tight">Adaptable a tu operativa</h2>
-                <p class="text-lg text-text-sec leading-relaxed">Casos de uso comunes en empresas que requieren alto rigor documental.</p>
+        <!-- Preparado para automatizar -->
+        <section class="py-20 bg-bg-alt border-b border-border">
+            <div class="max-w-[1360px] mx-auto px-6 md:px-12 text-center reveal">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 text-gold text-xs font-semibold uppercase tracking-wider mb-4 border border-gold/20">
+                    <i data-lucide="sparkles" class="w-3 h-3"></i> Próxima evolución
+                </div>
+                <h2 class="font-serif text-3xl md:text-[32px] text-navy mb-4 leading-tight">Preparado para simplificar la digitalización de documentos estándar.</h2>
+                <p class="text-lg text-text-sec leading-relaxed max-w-3xl mx-auto">Nuestra línea de automatización prevista está pensada para documentos estándar y procesos repetitivos, haciendo que la carga y organización documental sea todavía más rápida y sencilla en el futuro.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white p-8 rounded-[16px] border border-border shadow-sm reveal">
-                    <div class="w-12 h-12 rounded-xl bg-bg-main flex items-center justify-center mb-6 border border-border/50">
-                        <i data-lucide="landmark" class="text-navy w-6 h-6" stroke-width="1.5"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-navy mb-5">Finanzas</h3>
-                    <ul class="flex flex-col gap-3">
-                        <li class="flex items-start gap-3 text-text-sec">
-                            <i data-lucide="chevron-right" class="text-gold mt-1 flex-shrink-0 w-4 h-4"></i>
-                            <span class="leading-relaxed text-sm">Aprobación de facturas y presupuestos</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-text-sec">
-                            <i data-lucide="chevron-right" class="text-gold mt-1 flex-shrink-0 w-4 h-4"></i>
-                            <span class="leading-relaxed text-sm">Validación de justificantes de gasto</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-text-sec">
-                            <i data-lucide="chevron-right" class="text-gold mt-1 flex-shrink-0 w-4 h-4"></i>
-                            <span class="leading-relaxed text-sm">Auditoría de cierres contables</span>
-                        </li>
-                    </ul>
+        </section>
+
+        <!-- Casos de Uso -->
+        <section id="casos-uso" class="py-24 bg-white border-b border-border">
+            <div class="max-w-[1360px] mx-auto px-6 md:px-12">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <h2 class="font-serif text-3xl md:text-[32px] text-navy mb-4 leading-tight">Casos de uso reales</h2>
+                    <p class="text-lg text-text-sec leading-relaxed">Ejemplos concretos y cotidianos donde el orden digital marca la diferencia.</p>
                 </div>
-                <div class="bg-white p-8 rounded-[16px] border border-border shadow-sm reveal reveal-delay-1">
-                    <div class="w-12 h-12 rounded-xl bg-bg-main flex items-center justify-center mb-6 border border-border/50">
-                        <i data-lucide="building-2" class="text-navy w-6 h-6" stroke-width="1.5"></i>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="p-6 bg-bg-main rounded-xl border border-border reveal">
+                        <i data-lucide="receipt" class="text-navy w-6 h-6 mb-3"></i>
+                        <h3 class="font-semibold text-navy mb-2">Facturas y justificantes</h3>
+                        <p class="text-sm text-text-sec">Digitaliza tickets y facturas al instante para no perderlos y facilitar la contabilidad.</p>
                     </div>
-                    <h3 class="text-xl font-semibold text-navy mb-5">Operaciones</h3>
-                    <ul class="flex flex-col gap-3">
-                        <li class="flex items-start gap-3 text-text-sec">
-                            <i data-lucide="chevron-right" class="text-gold mt-1 flex-shrink-0 w-4 h-4"></i>
-                            <span class="leading-relaxed text-sm">Control de contratos de proveedores</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-text-sec">
-                            <i data-lucide="chevron-right" class="text-gold mt-1 flex-shrink-0 w-4 h-4"></i>
-                            <span class="leading-relaxed text-sm">Seguimiento de normativas de calidad</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-text-sec">
-                            <i data-lucide="chevron-right" class="text-gold mt-1 flex-shrink-0 w-4 h-4"></i>
-                            <span class="leading-relaxed text-sm">Gestión de SLAs y acuerdos</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="bg-white p-8 rounded-[16px] border border-border shadow-sm reveal reveal-delay-2">
-                    <div class="w-12 h-12 rounded-xl bg-bg-main flex items-center justify-center mb-6 border border-border/50">
-                        <i data-lucide="briefcase" class="text-navy w-6 h-6" stroke-width="1.5"></i>
+                    <div class="p-6 bg-bg-main rounded-xl border border-border reveal reveal-delay-1">
+                        <i data-lucide="file-signature" class="text-navy w-6 h-6 mb-3"></i>
+                        <h3 class="font-semibold text-navy mb-2">Contratos</h3>
+                        <p class="text-sm text-text-sec">Ten a mano los acuerdos con proveedores o clientes, bien clasificados y fáciles de consultar.</p>
                     </div>
-                    <h3 class="text-xl font-semibold text-navy mb-5">Administración</h3>
-                    <ul class="flex flex-col gap-3">
-                        <li class="flex items-start gap-3 text-text-sec">
-                            <i data-lucide="chevron-right" class="text-gold mt-1 flex-shrink-0 w-4 h-4"></i>
-                            <span class="leading-relaxed text-sm">Onboarding documental de empleados</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-text-sec">
-                            <i data-lucide="chevron-right" class="text-gold mt-1 flex-shrink-0 w-4 h-4"></i>
-                            <span class="leading-relaxed text-sm">Políticas internas y compliance</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-text-sec">
-                            <i data-lucide="chevron-right" class="text-gold mt-1 flex-shrink-0 w-4 h-4"></i>
-                            <span class="leading-relaxed text-sm">Registro de accesos a información sensible</span>
-                        </li>
-                    </ul>
+                    <div class="p-6 bg-bg-main rounded-xl border border-border reveal reveal-delay-2">
+                        <i data-lucide="clipboard-list" class="text-navy w-6 h-6 mb-3"></i>
+                        <h3 class="font-semibold text-navy mb-2">Formularios internos</h3>
+                        <p class="text-sm text-text-sec">Centraliza registros operativos, partes de trabajo o documentación de RRHH.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- FAQ -->
-        <section id="faq" class="min-h-screen flex flex-col justify-center py-12 bg-white border-y border-border">
+        <section id="faq" class="py-24 bg-bg-main border-b border-border">
             <div class="max-w-[900px] mx-auto px-6 md:px-12 w-full reveal">
-                <div class="text-center mb-8">
+                <div class="text-center mb-12">
                     <h2 class="font-serif text-3xl md:text-[32px] text-navy mb-4 leading-tight">Preguntas frecuentes</h2>
-                    <p class="text-lg text-text-sec">Resuelve tus dudas sobre la implementación y capacidades de Nexum Xestion.</p>
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col bg-white rounded-2xl border border-border overflow-hidden shadow-sm">
                     
-                    <div class="border-b border-border last:border-0">
-                        <button class="faq-btn w-full py-4 flex items-center justify-between text-left focus:outline-none group">
-                            <span class="font-medium text-base text-navy group-hover:text-gold transition-colors pr-8">¿Qué tipo de documentos puedo gestionar?</span>
+                    <div class="border-b border-border last:border-0 px-6">
+                        <button class="faq-btn w-full py-5 flex items-center justify-between text-left focus:outline-none group">
+                            <span class="font-medium text-base text-navy group-hover:text-gold transition-colors pr-8">¿Qué tipo de documentos puedo digitalizar?</span>
                             <i data-lucide="plus" class="text-navy-light flex-shrink-0 w-5 h-5 icon-plus"></i>
                             <i data-lucide="minus" class="text-gold flex-shrink-0 w-5 h-5 icon-minus hidden"></i>
                         </button>
                         <div class="faq-answer pb-0 text-text-sec leading-relaxed text-sm">
-                            Cualquier formato estándar (PDF, Word, Excel, imágenes). El sistema se centra en el control del archivo, su ciclo de vida y la trazabilidad de las interacciones con el mismo.
+                            Puedes subir cualquier formato estándar (PDF, Word, Excel, imágenes). La plataforma está diseñada para organizar desde facturas y contratos hasta formularios internos.
                         </div>
                     </div>
 
-                    <div class="border-b border-border last:border-0">
-                        <button class="faq-btn w-full py-4 flex items-center justify-between text-left focus:outline-none group">
-                            <span class="font-medium text-base text-navy group-hover:text-gold transition-colors pr-8">¿Cómo se controla el historial de cambios?</span>
+                    <div class="border-b border-border last:border-0 px-6">
+                        <button class="faq-btn w-full py-5 flex items-center justify-between text-left focus:outline-none group">
+                            <span class="font-medium text-base text-navy group-hover:text-gold transition-colors pr-8">¿Cómo organizo los documentos dentro de la app?</span>
                             <i data-lucide="plus" class="text-navy-light flex-shrink-0 w-5 h-5 icon-plus"></i>
                             <i data-lucide="minus" class="text-gold flex-shrink-0 w-5 h-5 icon-minus hidden"></i>
                         </button>
                         <div class="faq-answer pb-0 text-text-sec leading-relaxed text-sm">
-                            Cada acción (lectura, edición, subida de nueva versión, aprobación) genera un evento inmutable en el Audit Trail con fecha, usuario, rol y detalle exacto de la acción.
+                            A través de un sistema sencillo de carpetas, tipos documentales y etiquetas personalizables que dan contexto a cada archivo para que tenga sentido para tu negocio.
                         </div>
                     </div>
 
-                    <div class="border-b border-border last:border-0">
-                        <button class="faq-btn w-full py-4 flex items-center justify-between text-left focus:outline-none group">
-                            <span class="font-medium text-base text-navy group-hover:text-gold transition-colors pr-8">¿Se pueden definir roles y aprobaciones?</span>
+                    <div class="border-b border-border last:border-0 px-6">
+                        <button class="faq-btn w-full py-5 flex items-center justify-between text-left focus:outline-none group">
+                            <span class="font-medium text-base text-navy group-hover:text-gold transition-colors pr-8">¿Puedo encontrar documentos rápidamente después?</span>
                             <i data-lucide="plus" class="text-navy-light flex-shrink-0 w-5 h-5 icon-plus"></i>
                             <i data-lucide="minus" class="text-gold flex-shrink-0 w-5 h-5 icon-minus hidden"></i>
                         </button>
                         <div class="faq-answer pb-0 text-text-sec leading-relaxed text-sm">
-                            Sí, puedes crear flujos personalizados donde roles específicos (ej. Director Financiero, Legal) deben aprobar un documento para que este cambie de estado o avance en el flujo.
+                            Sí, ese es nuestro punto fuerte. Contamos con un buscador global y filtros por fecha, tipo o etiqueta para que localices cualquier archivo en segundos.
                         </div>
                     </div>
 
-                    <div class="border-b border-border last:border-0">
-                        <button class="faq-btn w-full py-4 flex items-center justify-between text-left focus:outline-none group">
-                            <span class="font-medium text-base text-navy group-hover:text-gold transition-colors pr-8">¿Quién puede acceder a cada documento?</span>
+                    <div class="border-b border-border last:border-0 px-6">
+                        <button class="faq-btn w-full py-5 flex items-center justify-between text-left focus:outline-none group">
+                            <span class="font-medium text-base text-navy group-hover:text-gold transition-colors pr-8">¿Está pensado para pequeñas empresas?</span>
                             <i data-lucide="plus" class="text-navy-light flex-shrink-0 w-5 h-5 icon-plus"></i>
                             <i data-lucide="minus" class="text-gold flex-shrink-0 w-5 h-5 icon-minus hidden"></i>
                         </button>
                         <div class="faq-answer pb-0 text-text-sec leading-relaxed text-sm">
-                            El acceso es estrictamente granular. Solo los usuarios o equipos con permisos explícitos asignados pueden ver, descargar o interactuar con un documento específico.
+                            Totalmente. Hemos diseñado Nexum Xestión para que sea accesible y útil desde el primer día para pymes y despachos que no quieren sistemas complejos.
+                        </div>
+                    </div>
+
+                    <div class="border-b border-border last:border-0 px-6">
+                        <button class="faq-btn w-full py-5 flex items-center justify-between text-left focus:outline-none group">
+                            <span class="font-medium text-base text-navy group-hover:text-gold transition-colors pr-8">¿Necesito conocimientos técnicos?</span>
+                            <i data-lucide="plus" class="text-navy-light flex-shrink-0 w-5 h-5 icon-plus"></i>
+                            <i data-lucide="minus" class="text-gold flex-shrink-0 w-5 h-5 icon-minus hidden"></i>
+                        </button>
+                        <div class="faq-answer pb-0 text-text-sec leading-relaxed text-sm">
+                            No. La interfaz es intuitiva y clara, similar a las aplicaciones que usas en tu día a día. Si sabes adjuntar un archivo a un correo, sabes usar Nexum Xestión.
                         </div>
                     </div>
 
@@ -655,76 +685,78 @@
         </section>
 
         <!-- Contact Form Section -->
-        <section id="contacto" class="min-h-screen flex flex-col justify-center py-12 px-6 md:px-12 max-w-[1360px] mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full reveal">
-                <div>
-                    <h2 class="font-serif text-3xl md:text-[32px] text-navy mb-4 leading-tight">Hablemos de vuestro flujo documental</h2>
-                    <p class="text-lg text-text-sec leading-relaxed mb-8">
-                        Déjanos tus datos y te contactaremos para enseñarte cómo Nexum Xestion puede ayudaros a ganar control, trazabilidad y claridad operativa.
-                    </p>
-                    <div class="flex items-center gap-4 text-navy font-medium bg-white p-5 rounded-[14px] border border-border shadow-sm inline-flex">
-                        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="shield-check" class="text-gold w-6 h-6"></i>
-                        </div>
-                        <span class="text-base">Demostración personalizada sin compromiso.</span>
+        <section id="contacto" class="py-24 bg-white">
+            <div class="max-w-[1360px] mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start w-full reveal">
+                    <div>
+                        <h2 class="font-serif text-3xl md:text-[40px] text-navy mb-4 leading-tight">Cuéntanos cómo gestionáis hoy vuestra documentación</h2>
+                        <p class="text-lg text-text-sec leading-relaxed mb-8">
+                            Déjanos tus datos y te mostraremos cómo Nexum Xestión puede ayudarte a digitalizar, ordenar y localizar tus documentos de forma más simple.
+                        </p>
                     </div>
-                </div>
-                
-                <!-- Form -->
-                <div class="bg-white p-6 md:p-8 rounded-[16px] border border-border shadow-sm" id="form-container">
-                    <form id="contact-form" class="flex flex-col gap-4">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="flex flex-col gap-1.5">
-                                <label class="text-xs font-medium text-navy">Nombre y apellidos *</label>
-                                <input required type="text" class="px-3 py-2.5 rounded-lg border border-border focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors text-sm" />
-                            </div>
-                            <div class="flex flex-col gap-1.5">
-                                <label class="text-xs font-medium text-navy">Empresa *</label>
-                                <input required type="text" class="px-3 py-2.5 rounded-lg border border-border focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors text-sm" />
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="flex flex-col gap-1.5">
-                                <label class="text-xs font-medium text-navy">Email corporativo *</label>
-                                <input required type="email" class="px-3 py-2.5 rounded-lg border border-border focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors text-sm" />
-                            </div>
-                            <div class="flex flex-col gap-1.5">
-                                <label class="text-xs font-medium text-navy">Cargo</label>
-                                <input type="text" class="px-3 py-2.5 rounded-lg border border-border focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors text-sm" />
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-1.5">
-                            <label class="text-xs font-medium text-navy">Tamaño de la empresa</label>
-                            <select class="px-3 py-2.5 rounded-lg border border-border focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors bg-white text-sm">
-                                <option value="">Selecciona una opción</option>
-                                <option value="1-50">1 - 50 empleados</option>
-                                <option value="51-200">51 - 200 empleados</option>
-                                <option value="201-500">201 - 500 empleados</option>
-                                <option value="500+">Más de 500 empleados</option>
-                            </select>
-                        </div>
-                        <div class="flex flex-col gap-1.5">
-                            <label class="text-xs font-medium text-navy">Mensaje / Necesidad</label>
-                            <textarea rows="3" class="px-3 py-2.5 rounded-lg border border-border focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors resize-none text-sm"></textarea>
-                        </div>
-                        <div class="flex items-start gap-2.5 mt-1">
-                            <input required type="checkbox" id="privacy" class="mt-0.5 rounded border-border text-gold focus:ring-gold w-3.5 h-3.5" />
-                            <label for="privacy" class="text-xs text-text-sec leading-relaxed">
-                                He leído y acepto la política de privacidad. Entiendo que mis datos serán tratados para gestionar mi solicitud.
-                            </label>
-                        </div>
-                        <button type="submit" id="submit-btn" class="mt-2 w-full bg-gold hover:bg-gold-hover text-white font-medium py-3 rounded-lg transition-colors flex items-center justify-center gap-2 text-base">
-                            Solicitar contacto
-                        </button>
-                    </form>
                     
-                    <!-- Success Message (Hidden by default) -->
-                    <div id="success-message" class="hidden text-center py-4">
-                        <div class="w-14 h-14 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-5">
-                            <i data-lucide="check-circle-2" class="text-emerald-600 w-7 h-7"></i>
+                    <!-- Form -->
+                    <div class="bg-white p-8 rounded-2xl border border-border shadow-lg shadow-navy/5" id="form-container">
+                        <form id="contact-form" class="flex flex-col gap-5">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div class="flex flex-col gap-1.5">
+                                    <label class="text-xs font-semibold text-navy uppercase tracking-wide">Nombre y apellidos *</label>
+                                    <input required type="text" class="px-4 py-3 rounded-lg border border-border focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors text-sm bg-bg-main/50" />
+                                </div>
+                                <div class="flex flex-col gap-1.5">
+                                    <label class="text-xs font-semibold text-navy uppercase tracking-wide">Empresa *</label>
+                                    <input required type="text" class="px-4 py-3 rounded-lg border border-border focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors text-sm bg-bg-main/50" />
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div class="flex flex-col gap-1.5">
+                                    <label class="text-xs font-semibold text-navy uppercase tracking-wide">Email corporativo *</label>
+                                    <input required type="email" class="px-4 py-3 rounded-lg border border-border focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors text-sm bg-bg-main/50" />
+                                </div>
+                                <div class="flex flex-col gap-1.5">
+                                    <label class="text-xs font-semibold text-navy uppercase tracking-wide">Cargo</label>
+                                    <input type="text" class="px-4 py-3 rounded-lg border border-border focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors text-sm bg-bg-main/50" />
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div class="flex flex-col gap-1.5">
+                                    <label class="text-xs font-semibold text-navy uppercase tracking-wide">Teléfono</label>
+                                    <input type="tel" class="px-4 py-3 rounded-lg border border-border focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors text-sm bg-bg-main/50" />
+                                </div>
+                                <div class="flex flex-col gap-1.5">
+                                    <label class="text-xs font-semibold text-navy uppercase tracking-wide">Nº Empleados</label>
+                                    <select class="px-4 py-3 rounded-lg border border-border focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors text-sm bg-bg-main/50 appearance-none">
+                                        <option value="">Seleccionar...</option>
+                                        <option value="1-10">1 - 10</option>
+                                        <option value="11-50">11 - 50</option>
+                                        <option value="51-200">51 - 200</option>
+                                        <option value="200+">Más de 200</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-1.5">
+                                <label class="text-xs font-semibold text-navy uppercase tracking-wide">¿Cómo gestionáis hoy vuestra documentación?</label>
+                                <textarea rows="3" class="px-4 py-3 rounded-lg border border-border focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors resize-none text-sm bg-bg-main/50"></textarea>
+                            </div>
+                            <div class="flex items-start gap-3 mt-2">
+                                <input required type="checkbox" id="privacy" class="mt-1 rounded border-border text-gold focus:ring-gold w-4 h-4 cursor-pointer" />
+                                <label for="privacy" class="text-xs text-text-sec leading-relaxed cursor-pointer">
+                                    He leído y acepto la política de privacidad. Entiendo que mis datos serán tratados para gestionar mi solicitud.
+                                </label>
+                            </div>
+                            <button type="submit" id="submit-btn" class="mt-4 w-full bg-gold hover:bg-gold-hover text-white font-medium py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2 text-base">
+                                Enviar solicitud
+                            </button>
+                        </form>
+                        
+                        <!-- Success Message -->
+                        <div id="success-message" class="hidden text-center py-10">
+                            <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <i data-lucide="check" class="text-emerald-600 w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-2xl font-serif font-medium text-navy mb-3">Solicitud recibida</h3>
+                            <p class="text-text-sec text-base">Gracias. Hemos recibido tu solicitud y te escribiremos pronto.</p>
                         </div>
-                        <h3 class="text-xl font-serif font-medium text-navy mb-2">Solicitud recibida</h3>
-                        <p class="text-text-sec text-base">Gracias. Hemos recibido tu solicitud y te escribiremos pronto para organizar la demostración.</p>
                     </div>
                 </div>
             </div>
@@ -732,11 +764,11 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-navy text-white pt-24 pb-12 px-6 md:px-12">
+    <footer class="bg-navy text-white pt-20 pb-10 px-6 md:px-12">
         <div class="max-w-[1360px] mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
                 <div class="md:col-span-5">
-                    <div class="flex items-center gap-3 mb-8">
+                    <div class="flex items-center gap-3 mb-6">
                         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 opacity-90">
                             <defs>
                                 <mask id="keyhole-mask-footer">
@@ -746,36 +778,37 @@
                                 </mask>
                             </defs>
                             <g mask="url(#keyhole-mask-footer)">
-                                <path d="M 50 85 L 21 85 L 24 42 L 32 44 V 30 A 18 18 0 0 1 50 12 V 22 A 8 8 0 0 0 42 30 V 42 H 45 V 36 H 50 Z" fill="#D4B271" />
-                                <path d="M 50 85 L 79 85 L 76 42 L 68 44 V 30 A 18 18 0 0 0 50 12 V 22 A 8 8 0 0 1 58 30 V 42 H 55 V 36 H 50 Z" fill="#B98A2E" />
+                                <path d="M 50 85 L 21 85 L 24 42 L 32 44 V 30 A 18 18 0 0 1 50 12 V 22 A 8 8 0 0 0 42 30 V 42 H 45 V 36 H 50 Z" fill="#B89449" />
+                                <path d="M 50 85 L 79 85 L 76 42 L 68 44 V 30 A 18 18 0 0 0 50 12 V 22 A 8 8 0 0 1 58 30 V 42 H 55 V 36 H 50 Z" fill="#9A7A3A" />
                             </g>
                         </svg>
-                        <span class="font-serif text-3xl font-medium tracking-wide">Nexum Xestion</span>
+                        <span class="font-serif text-2xl font-medium tracking-wide">Nexum Xestión</span>
                     </div>
-                    <p class="text-white/60 text-base leading-relaxed max-w-md">
-                        Software B2B de control, verificación y trazabilidad documental para equipos de finanzas y operaciones que no pueden permitirse errores.
+                    <p class="text-white/60 text-sm leading-relaxed max-w-sm">
+                        Facilitamos la digitalización documental de pequeñas y medianas empresas. Del papel al orden digital, de forma simple.
                     </p>
                 </div>
                 <div class="md:col-span-3 md:col-start-7">
-                    <h4 class="font-semibold mb-8 tracking-wider uppercase text-sm text-white/80">Producto</h4>
-                    <ul class="flex flex-col gap-5 text-base text-white/60">
+                    <h4 class="font-semibold mb-6 tracking-wider uppercase text-xs text-white/80">Producto</h4>
+                    <ul class="flex flex-col gap-4 text-sm text-white/60">
+                        <li><a href="#como-funciona" class="hover:text-white transition-colors">Cómo funciona</a></li>
                         <li><a href="#beneficios" class="hover:text-white transition-colors">Beneficios</a></li>
-                        <li><a href="#flujo" class="hover:text-white transition-colors">Cómo funciona</a></li>
-                        <li><a href="#seguridad" class="hover:text-white transition-colors">Seguridad</a></li>
+                        <li><a href="#casos-uso" class="hover:text-white transition-colors">Casos de uso</a></li>
+                        <li><a href="#orden-digital" class="hover:text-white transition-colors">Orden digital</a></li>
                     </ul>
                 </div>
                 <div class="md:col-span-3">
-                    <h4 class="font-semibold mb-8 tracking-wider uppercase text-sm text-white/80">Compañía</h4>
-                    <ul class="flex flex-col gap-5 text-base text-white/60">
+                    <h4 class="font-semibold mb-6 tracking-wider uppercase text-xs text-white/80">Compañía</h4>
+                    <ul class="flex flex-col gap-4 text-sm text-white/60">
                         <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
                         <li><a href="#contacto" class="hover:text-white transition-colors">Contacto</a></li>
                         <li><a href="mailto:contacto@nexumxestion.com" class="hover:text-white transition-colors">contacto@nexumxestion.com</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-white/40">
-                <p>&copy; 2026 Nexum Xestion. Todos los derechos reservados.</p>
-                <div class="flex gap-8">
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
+                <p>&copy; 2026 Nexum Xestión. Todos los derechos reservados.</p>
+                <div class="flex gap-6">
                     <a href="#" class="hover:text-white transition-colors">Política de Privacidad</a>
                     <a href="#" class="hover:text-white transition-colors">Aviso Legal</a>
                 </div>
@@ -858,8 +891,9 @@
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Enviando solicitud...';
-            submitBtn.classList.add('opacity-70');
+            submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Enviando...';
+            lucide.createIcons(); // Re-render icon
+            submitBtn.classList.add('opacity-80');
             
             setTimeout(() => {
                 contactForm.classList.add('hidden');
@@ -871,9 +905,9 @@
                     contactForm.classList.remove('hidden');
                     successMessage.classList.add('hidden');
                     submitBtn.disabled = false;
-                    submitBtn.innerHTML = 'Solicitar contacto';
-                    submitBtn.classList.remove('opacity-70');
-                }, 5000);
+                    submitBtn.innerHTML = 'Enviar solicitud';
+                    submitBtn.classList.remove('opacity-80');
+                }, 6000);
             }, 1500);
         });
 
@@ -896,6 +930,14 @@
         document.querySelectorAll('.reveal').forEach(element => {
             observer.observe(element);
         });
+        
+        // Animación personalizada para el escáner del mockup
+        tailwind.config.theme.extend.keyframes = {
+            scan: {
+                '0%, 100%': { top: '0%' },
+                '50%': { top: '100%' },
+            }
+        };
     </script>
 </body>
 </html>
