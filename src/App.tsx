@@ -217,7 +217,7 @@ const ContactForm = () => {
   );
 };
 
-const FAQItem = ({ question, answer }: { question: string, answer: string }) => {
+const FAQItem: React.FC<{ question: string, answer: string }> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="border-b border-border last:border-0">
